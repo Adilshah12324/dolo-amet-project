@@ -12,11 +12,30 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('super_admin.welcome');
+    return view('welcome');
 });
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// super admin routes
+Route::prefix('dashboard')->middleware(['checkrole:2'])->group(function () {
+    Route::get('/admin', function () {
+        return view('super_admin.welcome');
+    });
+});
+
+// admins routes
+Route::prefix('dashboard')->middleware(['checkrole:1'])->group(function () {
+    Route::get('/', function () {
+        return view('super_admin.welcome');
+    });
+
+    Route::get('/super-admin', function () {
+        return 'super admin';
+    });
+});
