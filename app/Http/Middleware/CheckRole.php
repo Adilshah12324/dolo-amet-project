@@ -28,7 +28,7 @@ class CheckRole
         if ($userRoleId == 1) {
             return redirect('/dashboard/super-admin');
         } elseif ($userRoleId == 2) {
-            return redirect('/dashboard/admin');
+            return redirect('/dashboard-admin');
         }
 
         return redirect('/');

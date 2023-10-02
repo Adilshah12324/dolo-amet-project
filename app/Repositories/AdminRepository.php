@@ -57,6 +57,8 @@ class AdminRepository implements AdminRepositoryInterface {
 
         $adminData->save();
 
+        $adminData->domains()->detach();
+        
         $selectedUserIds = $request->input('domains');
         foreach ($selectedUserIds as $userId) {
             $adminData->domains()->attach($userId);

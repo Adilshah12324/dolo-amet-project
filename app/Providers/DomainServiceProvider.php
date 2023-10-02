@@ -4,14 +4,17 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class DomainProvider extends ServiceProvider
+class DomainServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
     public function register(): void
     {
-        //
+        $this->app->bind(
+            DomainRepositoryInterface::class,
+            DomainRepository::class,
+        );
     }
 
     /**
