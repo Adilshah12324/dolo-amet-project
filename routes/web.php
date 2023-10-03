@@ -40,7 +40,7 @@ Route::prefix('dashboard-admin')->middleware(['checkrole:2'])->group(function ()
     });
 
     Route::get('/domain',[DomainController::class,'index'])->name('index.domain.admin');
-    // Route::domain('/{domain}.example.com',[DomainController::class,'domainName'])->name('name.domain.admin');
+
 });
 // super admins routes
 Route::prefix('dashboard')->middleware(['checkrole:1'])->group(function () {
