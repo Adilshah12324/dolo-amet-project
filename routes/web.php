@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DomainController;
+use App\Http\Controllers\SubdomainController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
+Route::get('/s', function () {
     return view('welcome');
+});
+
+// sub domain route
+
+Route::domain('{domain}.example.com')->group(function () {
+    // Admin routes go here
+    Route::get('/',[SubdomainController::class,'index']);
+
 });
 
 
@@ -31,7 +40,7 @@ Route::prefix('dashboard-admin')->middleware(['checkrole:2'])->group(function ()
     });
 
     Route::get('/domain',[DomainController::class,'index'])->name('index.domain.admin');
-    Route::get('/{domain}',[DomainController::class,'domainName'])->name('name.domain.admin');
+    // Route::domain('/{domain}.example.com',[DomainController::class,'domainName'])->name('name.domain.admin');
 });
 // super admins routes
 Route::prefix('dashboard')->middleware(['checkrole:1'])->group(function () {

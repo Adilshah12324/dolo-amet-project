@@ -24,22 +24,22 @@
                 <!-- Page Heading -->
                 <br><br><br>
                 <center>
-                    <h1 class="h3 mb-2 text-gray-800">{{$domain}}</h1>
+                    {{-- <h1 class="h3 mb-2 text-gray-800">{{$domain}}</h1> --}}
 
                 </center>
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">You can also visit your other domains below:</h6>
-                        <a href="{{url('dashboard-admin/domain')}}" class="btn btn-info float-right btn-sm">Back to Dashboard</a>
+                        <h6 class="m-0 font-weight-bold text-primary">there is no content been added to this sub domain</h6>
+                        <a href="http://127.0.0.1:8000/dashboard-admin/domain" class="btn btn-info float-right btn-sm">Back to Dashboard</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 
                                 <tbody>
-                                @foreach($domains as $domain)
+                                {{-- @foreach($domains as $domain)
 
                                     <tr>
 
@@ -50,7 +50,7 @@
                                         </td>
                                         
                                     </tr>
-                                @endforeach
+                                @endforeach --}}
 
                                 </tbody>
                             </table>

@@ -58,7 +58,7 @@
                                             {{$domain->name}} ,
                                         @endforeach
                                         </td>
-                                        <td>
+                                        <td style="white-space: nowrap">
                                             <a href="{{url('dashboard/admin/edit/'.$admin->id)}}" class="btn btn-success btn-sm">Edit</a>
                                             <a href="{{url('dashboard/admin/delete/'.$admin->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                         </td>

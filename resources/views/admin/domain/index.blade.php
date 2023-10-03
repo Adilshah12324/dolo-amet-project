@@ -46,7 +46,7 @@
                                     <tr>
                                         <td>{{$domain->id}}</td>
 
-                                            <td><a href="{{$domain->name}}" target="blank">
+                                            <td><a href="http://{{ $domain->name }}:8000" target="blank">
                                                 {{$domain->name}}
                                             <i class="fas fa-external-link-square-alt"></i>
                                         </a>
